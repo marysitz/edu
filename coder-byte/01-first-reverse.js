@@ -2,11 +2,14 @@
 
 function FirstReverse(str) {
   
-  var strChanged = str.split('') // split string into array; each character is equal to an array value
-  						        .reverse() //reverse string
-                      .join(""); // join elements back into string
+  // split string into array; each character is equal to an array value
+  //reverse string
+  // join elements back into string
+  var strChanged = str.split('') .reverse().join(""); 
   return strChanged;
  
 }
+
+
 
 console.log(FirstReverse("I am Mary Ellen Sitzenstatter"));
