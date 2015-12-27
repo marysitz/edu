@@ -1,32 +1,13 @@
-// Find the first repeating character in a string.
+// Find the first repeating letter in a string (case sensitive)
 
-function firstLetter(str) {
-  
-  // convert str to array
-  var strArray = str.split('');
-  
-  // get length of array for loop
-  var strArrayLength = strArray.length;
-  
-  // create empty array. use this array to push letter from array after it has been looped
-  var seenLetters = [];
-  
-  // loop through length of str
-  for (var x = 0; x < strArrayLength; x++) {
-    
-    // declare variable with value of letter from this time around loop
-    var letterThisLoop = strArray[x];
-  
-    //if letterthisloop has been pushed to array seenLetters return letter
-    if(seenLetters.indexOf(letterThisLoop) > -1) {
-      return letterThisLoop;
+function repeatingLetter(str){
+  var newStr = "";
+  for (var x = 0; x < str.length; x++) {
+    var strLetter = str[x];
+    if (newStr.indexOf(strLetter) > -1){
+      return strLetter;
     }
-    
-    // push letterThisLoop to seenLetters
-    seenLetters.push(letterThisLoop);
-   
-  }
-  
+    newStr += strLetter;
+  }  
 }
-
-console.log(firstLetter("Sitzenstatter"));
+console.log(repeatingLetter("Grace Hopper Academy"));
