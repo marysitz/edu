@@ -1,39 +1,23 @@
 // Using the JavaScript language, have the function LetterCapitalize(str) take the str parameter being passed and capitalize the first letter of each word. Words will be separated by only one space. 
 
-function LetterChanges(str) {
-  
-  // take string and make array with word as value
+function LetterCapitalize(str) { 
   var strArray = str.split(" ");
-
-  // get length of string word array
-  var strArrayLength = strArray.length;
- 
-  // create new empty array
-  var capArray = [];
+  var arrayValue = "";
+  var firstLetterCapitalized = "";
+  var newArrayValue;
+  var newArrayValueNoFirstLetter;
+  var newArray = [];
   
-  // for loop through length of array
-  for (var x = 0; x < strArrayLength; x++) {
-    
-    // declare variable for word of array
-    var wordOfArray = strArray[x];
-    
-    // apply toUpperCase method on 0 index of all words in array
-    var capitalizedLetter = wordOfArray[0].toUpperCase();
-  
-    //remove first letter from wordOfArray
-    var myNewWord = wordOfArray.slice(1);
-    
-    // create new word with capitalized letter
-    wordOfArray = capitalizedLetter + myNewWord;
-
-    // push word with uppercase to new array
-    capArray.push(wordOfArray);
-  }  
-  
-  // return new array and join
-  str = capArray.join(" ");
-  return str;
+  for (var x = 0; x < strArray.length; x++) {
+    arrayValue = strArray[x];
+    firstLetterCapitalized = arrayValue[0].toUpperCase();
+    newArrayValueNoFirstLetter = arrayValue.slice(1);
+    newArrayValue = firstLetterCapitalized + newArrayValueNoFirstLetter;
+    newArray.push(newArrayValue);
+  }
+  var finalArray = newArray.join(" ");
+  return finalArray;
 }
 
 
-console.log(LetterChanges("mary sitzenstatter is my name"));
+console.log(LetterCapitalize("mary ellen sitzenstatter"));
